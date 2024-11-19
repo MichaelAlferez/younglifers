@@ -1,0 +1,64 @@
+ /* Basic styles for the modal */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    
+}
+
+.modal-content {
+    background-color: #0c6349;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #4e3b3b;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 8px;
+}
+
+.modal-content input {
+    display: block; /* Make sure each input is on a new line */
+    width: 100%; /* Ensure inputs take up the full width of the modal */
+    margin-bottom: 15px; /* Add margin at the bottom of each input */
+    padding: 10px; /* Add padding for better readability */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+    font-size: 16px; /* Font size for the inputs */
+}
+
+/* Style for input type number */
+.modal-content input[type="number"] {
+    width: 20%; /* Adjust the width as needed */
+    color: #ff5722; /* Change the color of the number inside */
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+/* Optionally, you can style the placeholder text color too */
+.modal-content input[type="number"]::placeholder {
+    color: #999; /* Color for placeholder */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

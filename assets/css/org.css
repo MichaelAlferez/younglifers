@@ -1,0 +1,99 @@
+.chart {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.node {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    position: relative; /* Needed for positioning the overlay */
+    overflow: hidden; /* Hide overflow of child elements */
+}
+
+.connector {
+    height: 20px;
+    width: 2px;
+    background-color: #007bff;
+    margin: 0 auto;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+}
+
+.image-container {
+    position: relative; /* To position the overlay correctly */
+}
+
+/* Initial size for the profile image */
+.profile-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Maintain circular shape */
+    margin-bottom: 5px;
+}
+
+/* On hover, change size and shape immediately without transition */
+.node:hover .profile-image {
+    width: 200px; /* New width on hover */
+    height: 200px; /* New height on hover */
+    border-radius: 0; /* Change to rectangular on hover */
+}
+
+/* Styling for role and name */
+.role {
+    color: #e9c704;
+    font-style: italic;
+}
+
+.name {
+    color: #ffffff; /* Change role font color */
+    font-weight: 100;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Gradient overlay style */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    opacity: 0; /* Initially hidden */
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align items to the bottom */
+    transition: opacity 0.3s ease; /* Only opacity transitions smoothly */
+}
+
+/* Text inside the overlay */
+.overlay-text {
+    color: black; /* Change text color as needed */
+    font-size: 18px; /* Change font size as needed */
+    transform: translateY(40px); /* Start text lower */
+    transition: transform 2s ease; /* Text rises slowly */
+}
+
+/* Animation for rising text on hover */
+.node:hover .overlay {
+    opacity: 1; /* Fade in overlay */
+}
+
+.node:hover .overlay-text {
+    transform: translateY(0); /* Text rises to its original position */
+}
+
+/* Reset transform immediately when hover is removed (no transition) */
+.node .overlay-text {
+    transition: transform 0s; /* Text jumps back instantly */
+}
+
+/* Hide name and role on hover */
+.node:hover .name,
+.node:hover .role {
+    display: none; /* Hide name and role */
+}

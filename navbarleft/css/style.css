@@ -1,0 +1,282 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dfdfdf; 
+    color: #1f3b4d; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Wrapper to handle both navbar and content layout */
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* Left-side Navbar */
+.navbar {
+    width: 300px;
+    background-color: #555; /* Light Aqua */
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3); /* Adds shadow */
+    transition: width 0.3s ease;
+}
+
+/* Welcome Message */
+.navbar .welcome {
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    color: #ffffff; /* Dark Slate */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Navbar List Items */
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.navbar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff; /* Dark Slate */
+    font-size: 22px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li:hover {
+    background-color: #ffffff; /* Coral Orange */
+}
+
+.navbar ul li:hover a {
+    color: #000000; /* Change text color to white when hovering */
+}
+
+/* Active link effect */
+.navbar ul li.active {
+    background-color: #c0bcbc; /* Same as hover background */
+}
+
+.navbar ul li.active a {
+    color: rgb(255, 255, 255); /* Same as hover text color */
+}
+
+/* Log Out Button */
+.logout-btn {
+    text-align: center;
+    padding: 10px;
+    background-color: #a82424; /* Dark Teal */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 8px;
+    margin-bottom: 100px;
+}
+
+.logout-btn:hover {
+    background-color: #d31d1d; /* Coral Orange */
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 300px; /* Width of the navbar */
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: margin-left 0.3s ease;
+}
+
+h1 {
+    color: #026670; /* Dark Teal */
+    margin-bottom: 20px;
+}
+
+form {
+    display: block;
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #026670; /* Dark Teal */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #026670; /* Dark Teal */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #026670; /* Dark Teal */
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #f37748; /* Coral Orange */
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar {
+        width: 250px;
+    }
+
+    .main-content {
+        margin-left: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+    }
+
+    .navbar .welcome {
+        font-size: 20px;
+    }
+
+    .navbar ul li a {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        flex-direction: column;
+    }
+
+    .navbar {
+        position: static;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .navbar ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/*Missions
+
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            padding-top: 100px;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .modal-content p {
+            color: #333;
+            font-size: 18px;
+            padding-top: 40px;
+        }
+        
+        .modal-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0px 20px; /* Increased paddin g for better button size */
+            margin: 10px; /* Added margin for space between buttons */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px; /* Consistent font size */
+        }
+        
+        .modal-button:hover {
+            background-color: #45a049;
+        }
+        
+        .modal-button.cancel {
+            background-color: #f44336; /* Red color for cancel button */
+        }
+        
+        .modal-button.cancel:hover {
+            background-color: #e53935; /* Darker red on hover */
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            cursor: pointer;
+        }
+
+
+        ::placeholder{
+            font-weight: 500;
+            color: #222;
+        }
